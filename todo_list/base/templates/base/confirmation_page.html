@@ -1,0 +1,33 @@
+
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container table">
+  <div class="row justify-content-center" >
+        <div class="card " style="width: 39rem; height: 30rem; margin:5rem 3rem 5rem 3rem; border-width: medium; border-color: dimgray; ">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item " style="background-color: dimgrey;" ><h3>Confirmation Page </h3></li>
+              <li class="list-group-item"><strong>Name: </strong>{{request.user}}  <br> </li>
+              <li class="list-group-item"><strong>Distance: </strong> {{ distance }} <br></li>
+              <li class="list-group-item"><strong>ETA: </strong>{{time}}</li>
+              <li class="list-group-item"><strong>PickUp: </strong>{{pickup_name}}</li>
+              <li class="list-group-item"><strong>Drop: </strong>{{drop_name}}</li>
+              <li class="list-group-item"><strong>Price: </strong> ₦{{price}}</li>
+              <li class="list-group-item"><strong>Driver: </strong> {{ driver_time_away }} Away</li>
+              <li class="list-group-item"><a href="#" class="btn btn-success">Pay & Confirm</a></li>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" 
+              data-description="taxi payment"
+              data-amount="500"
+              data-locale="auto">
+              </script>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
